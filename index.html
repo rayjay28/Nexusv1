@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Asset Management Services - Precision Instrument Calibration</title>
+    <meta name="description" content="Your trusted partner for accurate and reliable equipment calibration in New England. NIST-traceable standards, cGMP compliant certifications.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateX(15px) translateY(-5px);
+        }
+        
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            border-radius: 4px;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .celebration-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(16, 185, 129, 0.2));
+            backdrop-filter: blur(4px);
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .bounce {
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translate3d(0,0,0);
+            }
+            40%, 43% {
+                transform: translate3d(0,-30px,0);
+            }
+            70% {
+                transform: translate3d(0,-15px,0);
+            }
+            90% {
+                transform: translate3d(0,-4px,0);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 w-full z-50 py-4 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">Nexus Asset Management</div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="nav-link font-medium transition-all duration-300 relative text-blue-600">Home</a></li>
+                <li><a href="#services" class="nav-link font-medium transition-all duration-300 relative text-slate-700 hover:text-blue-600">Services</a></li>
+                <li><a href="#about" class="nav-link font-medium transition-all duration-300 relative text-slate-700 hover:text-blue-600">About</a></li>
+                <li><a href="#process" class="nav-link font-medium transition-all duration-300 relative text-slate-700 hover:text-blue-600">Process</a></li>
+                <li><a href="#contact" class="nav-link font-medium transition-all duration-300 relative text-slate-700 hover:text-blue-600">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 pb-16 bg-gradient-to-br from-slate-50 to-slate-200 min-h-screen flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 fade-in-element opacity-0 translate-y-8">
+                    <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-800 leading-tight">
+                        Precision <span class="text-blue-600">Instrument Calibration</span> Excellence
+                    </h1>
+                    <p class="text-xl text-slate-600 leading-relaxed">
+                        Your trusted partner for accurate and reliable equipment calibration in New England. NIST-traceable
+                        standards, cGMP compliant certifications, and tailored solutions for your industry needs.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:-translate-y-2 transition-all duration-300 transform text-center">
+                            Request Quote
+                        </a>
+                        <a href="#services" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 text-center">
+                            Our Services
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-2xl fade-in-element opacity-0 translate-y-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-8 text-center">Trusted by Industry Leaders</h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-slate-50 rounded-2xl hover:bg-blue-50 hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <div class="text-3xl font-bold text-blue-600">15+</div>
+                            <div class="text-sm text-slate-600 mt-2">Years Experience</div>
+                        </div>
+                        <div class="text-center p-4 bg-slate-50 rounded-2xl hover:bg-blue-50 hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <div class="text-3xl font-bold text-blue-600">500+</div>
+                            <div class="text-sm text-slate-600 mt-2">Satisfied Clients</div>
+                        </div>
+                        <div class="text-center p-4 bg-slate-50 rounded-2xl hover:bg-blue-50 hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <div class="text-3xl font-bold text-blue-600">99.9%</div>
+                            <div class="text-sm text-slate-600 mt-2">Accuracy Rate</div>
+                        </div>
+                        <div class="text-center p-4 bg-slate-50 rounded-2xl hover:bg-blue-50 hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <div class="text-3xl font-bold text-blue-600">24/7</div>
+                            <div class="text-sm text-slate-600 mt-2">Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="lg:sticky lg:top-32 space-y-6 fade-in-element opacity-0 translate-y-8">
+                    <h2 class="text-4xl font-bold text-slate-800">Comprehensive Calibration Services</h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        We provide precision calibration services across multiple industries, ensuring your equipment meets the
+                        highest standards for accuracy and compliance.
+                    </p>
+                    <p class="text-slate-600">
+                        All our calibrations are NIST-traceable and cGMP compliant, giving you the confidence that your
+                        instruments perform at optimal levels.
+                    </p>
+                </div>
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="service-card bg-slate-50 rounded-3xl p-8 border-2 border-transparent hover:border-blue-600 hover:bg-white hover:shadow-xl cursor-pointer group fade-in-element opacity-0 translate-y-8">
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                            Laboratory Equipment Calibration
+                        </h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Precision calibration for analytical instruments, balances, pipettes, and measurement devices used in laboratory environments.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Analytical Balances</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Pipettes</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">pH Meters</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Spectrophotometers</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-slate-50 rounded-3xl p-8 border-2 border-transparent hover:border-blue-600 hover:bg-white hover:shadow-xl cursor-pointer group fade-in-element opacity-0 translate-y-8">
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                            Manufacturing Instruments
+                        </h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Industrial calibration services for production equipment, ensuring consistent quality and regulatory compliance in manufacturing processes.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Pressure Gauges</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Flow Meters</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Temperature Sensors</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Torque Tools</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-slate-50 rounded-3xl p-8 border-2 border-transparent hover:border-blue-600 hover:bg-white hover:shadow-xl cursor-pointer group fade-in-element opacity-0 translate-y-8">
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                            Pharmaceutical Equipment
+                        </h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            cGMP compliant calibrations for pharmaceutical manufacturing equipment, meeting FDA and international regulatory requirements.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Clean Rooms</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Incubators</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Autoclaves</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Stability Chambers</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-slate-50 rounded-3xl p-8 border-2 border-transparent hover:border-blue-600 hover:bg-white hover:shadow-xl cursor-pointer group fade-in-element opacity-0 translate-y-8">
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                            Environmental Monitoring
+                        </h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Calibration of environmental monitoring systems to ensure accurate measurement of critical parameters in controlled environments.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Data Loggers</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Humidity Sensors</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Air Quality Monitors</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-200">Particle Counters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-slate-800 to-slate-700 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="space-y-6 fade-in-element opacity-0 translate-y-8">
+                    <h2 class="text-4xl font-bold">Excellence in Precision</h2>
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        At Nexus Asset Management Services, we are your trusted partner for precise instrument calibration in
+                        New England. Our team of certified technicians ensures the accuracy and reliability of your equipment to
+                        meet industry standards and regulations.
+                    </p>
+                    <p class="text-slate-300 leading-relaxed">
+                        With over 15 years of experience, we understand the unique requirements of each customer we serve. Our
+                        tailored asset management solutions guarantee optimal program efficiency while maintaining the highest
+                        standards of quality and compliance.
+                    </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 fade-in-element opacity-0 translate-y-8">
+                    <h3 class="text-2xl font-bold text-center mb-8">Our Certifications</h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-white/5 rounded-2xl border border-white/20 hover:bg-white/10 hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <i data-lucide="target" class="w-10 h-10 mx-auto mb-3 text-blue-400"></i>
+                            <div class="font-semibold mb-2">NIST Traceable</div>
+                            <div class="text-sm text-slate-300">All standards traceable to SI units</div>
+                        </div>
+                        <div class="text-center p-4 bg-white/5 rounded-2xl border border-white/20 hover:bg-white/10 hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <i data-lucide="award" class="w-10 h-10 mx-auto mb-3 text-blue-400"></i>
+                            <div class="font-semibold mb-2">cGMP Compliant</div>
+                            <div class="text-sm text-slate-300">FDA regulatory compliance</div>
+                        </div>
+                        <div class="text-center p-4 bg-white/5 rounded-2xl border border-white/20 hover:bg-white/10 hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <i data-lucide="file-check" class="w-10 h-10 mx-auto mb-3 text-blue-400"></i>
+                            <div class="font-semibold mb-2">ISO Standards</div>
+                            <div class="text-sm text-slate-300">International quality standards</div>
+                        </div>
+                        <div class="text-center p-4 bg-white/5 rounded-2xl border border-white/20 hover:bg-white/10 hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <i data-lucide="shield" class="w-10 h-10 mx-auto mb-3 text-blue-400"></i>
+                            <div class="font-semibold mb-2">Quality Assured</div>
+                            <div class="text-sm text-slate-300">Rigorous QA procedures</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-slate-800 mb-16 fade-in-element opacity-0 translate-y-8">
+                Our Calibration Process
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 to-blue-800"></div>
+
+                    <div class="timeline-item relative flex items-center mb-16 flex-row" data-index="0">
+                        <div class="flex-1 pr-8">
+                            <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <h3 class="text-2xl font-semibold text-slate-800 mb-4">Initial Consultation</h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    We assess your calibration needs, review your equipment inventory, and develop a customized calibration program tailored to your industry requirements and compliance standards.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hover:scale-110 transition-transform duration-300">
+                            1
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative flex items-center mb-16 flex-row-reverse" data-index="1">
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <h3 class="text-2xl font-semibold text-slate-800 mb-4">Equipment Assessment</h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    Our certified technicians perform a comprehensive evaluation of your instruments, identifying calibration requirements and establishing baseline performance metrics.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hover:scale-110 transition-transform duration-300">
+                            2
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative flex items-center mb-16 flex-row" data-index="2">
+                        <div class="flex-1 pr-8">
+                            <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <h3 class="text-2xl font-semibold text-slate-800 mb-4">Precision Calibration</h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    Using NIST-traceable standards and state-of-the-art equipment, we perform precise calibrations following established procedures and industry best practices.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hover:scale-110 transition-transform duration-300">
+                            3
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative flex items-center mb-16 flex-row-reverse" data-index="3">
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <h3 class="text-2xl font-semibold text-slate-800 mb-4">Documentation & Certification</h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    We provide comprehensive calibration certificates and documentation that meet cGMP requirements and support your quality assurance and regulatory compliance needs.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hover:scale-110 transition-transform duration-300">
+                            4
+                        </div>
+                    </div>
+
+                    <div class="timeline-item relative flex items-center mb-16 flex-row" data-index="4">
+                        <div class="flex-1 pr-8">
+                            <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <h3 class="text-2xl font-semibold text-slate-800 mb-4">Ongoing Support</h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    We establish calibration schedules, provide reminder services, and offer ongoing technical support to maintain your equipment's accuracy and compliance over time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hover:scale-110 transition-transform duration-300">
+                            5
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-slate-800 mb-16 fade-in-element opacity-0 translate-y-8">
+                Get Started Today
+            </h2>
+            <div class="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
+                <div class="lg:col-span-2 fade-in-element opacity-0 translate-y-8">
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-700 text-white rounded-3xl p-8 h-fit">
+                        <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4 p-4 bg-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                                <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold mb-1">Service Area</div>
+                                    <div class="text-sm text-slate-300">Throughout New England</div>
+                                    <div class="text-sm text-slate-300">On-site and lab services available</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4 p-4 bg-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                                <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="phone" class="w-6 h-6 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold mb-1">Phone Support</div>
+                                    <div class="text-sm text-slate-300">Available for consultations</div>
+                                    <div class="text-sm text-slate-300">Technical support included</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4 p-4 bg-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                                <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="mail" class="w-6 h-6 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold mb-1">Professional Service</div>
+                                    <div class="text-sm text-slate-300">Quick response times</div>
+                                    <div class="text-sm text-slate-300">Comprehensive documentation</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4 p-4 bg-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                                <div class="w-12 h-12 bg-blue-600/20 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="clock" class="w-6 h-6 text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold mb-1">Flexible Scheduling</div>
+                                    <div class="text-sm text-slate-300">Minimal downtime</div>
+                                    <div class="text-sm text-slate-300">Emergency services available</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-3 fade-in-element opacity-0 translate-y-8">
+                    <!-- Contact Form -->
+                    <div id="contact-form-container" class="bg-slate-50 rounded-3xl p-8 border-2 border-slate-200 relative overflow-hidden">
+                        <!-- Celebration overlay (hidden by default) -->
+                        <div id="celebration-overlay" class="celebration-overlay hidden">
+                            <div class="text-center bounce">
+                                <div class="text-6xl mb-4">🎉</div>
+                                <div class="text-2xl font-bold text-slate-800 mb-2">Success!</div>
+                                <div class="text-lg text-slate-600">Your request has been submitted!</div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-slate-800 mb-8">Request a Quote</h3>
+
+                        <div id="status-message" class="hidden mb-6 p-4 rounded-xl">
+                            <div class="flex items-center">
+                                <div id="status-dot" class="w-2 h-2 rounded-full mr-3"></div>
+                                <span id="status-text"></span>
+                                <span id="status-emoji" class="ml-2"></span>
+                            </div>
+                        </div>
+
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-semibold text-slate-700 mb-2">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-300">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-semibold text-slate-700 mb-2">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-300">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Email Address *</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-300">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-300">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="company" class="block text-sm font-semibold text-slate-700 mb-2">Company Name *</label>
+                                <input type="text" id="company" name="company" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-300">
+                            </div>
+
+                            <div>
+                                <label for="industry" class="block text-sm font-semibold text-slate-700 mb-2">Industry Type *</label>
+                                <select id="industry" name="industry" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-300">
+                                    <option value="">Select Industry Type</option>
+                                    <option value="pharmaceutical">Pharmaceutical</option>
+                                    <option value="laboratory">Laboratory</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="research">Research & Development</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="services" class="block text-sm font-semibold text-slate-700 mb-2">Services Needed *</label>
+                                <select id="services" name="services" required class="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-300">
+                                    <option value="">Select Service Type</option>
+                                    <option value="laboratory">Laboratory Equipment</option>
+                                    <option value="manufacturing">Manufacturing Instruments</option>
+                                    <option value="pharmaceutical">Pharmaceutical Equipment</option>
+                                    <option value="environmental">Environmental Monitoring</option>
+                                    <option value="multiple">Multiple Services</option>
+                                    <option value="consultation">Consultation Only</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-slate-700 mb-2">Project Details</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Please describe your calibration needs, equipment types, and any specific requirements..." class="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-300 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 rounded-2xl font-semibold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 transform disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none">
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Nexus Asset Management Services</h3>
+                    <p class="text-slate-300 leading-relaxed">
+                        Your trusted partner for precision instrument calibration in New England. We provide NIST-traceable,
+                        cGMP compliant calibration services with a focus on accuracy, reliability, and customer satisfaction.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Laboratory Equipment</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Manufacturing Instruments</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Pharmaceutical Equipment</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition-colors">Environmental Monitoring</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="#about" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#process" class="hover:text-blue-400 transition-colors">Our Process</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400 transition-colors">Request Quote</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center text-slate-400">
+                <p>&copy; 2025 Nexus Asset Management Services. All rights reserved. | NIST-Traceable Calibration Services in New England</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Navigation and scroll effects
+        let activeSection = 'home';
+        let headerScrolled = false;
+
+        function updateActiveSection() {
+            const sections = ['home', 'services', 'about', 'process', 'contact'];
+            const scrollPosition = window.scrollY + 100;
+
+            // Header scroll effect
+            const newHeaderScrolled = window.scrollY > 100;
+            if (newHeaderScrolled !== headerScrolled) {
+                headerScrolled = newHeaderScrolled;
+                const header = document.getElementById('header');
+                if (headerScrolled) {
+                    header.className = 'fixed top-0 w-full z-50 py-4 transition-all duration-300 bg-white/98 backdrop-blur-md shadow-xl';
+                } else {
+                    header.className = 'fixed top-0 w-full z-50 py-4 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg';
+                }
+            }
+
+            // Active section detection
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const { offsetTop, offsetHeight } = element;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        if (activeSection !== section) {
+                            activeSection = section;
+                            updateNavigation();
+                        }
+                        break;
+                    }
+                }
+            }
+
+            // Parallax effect for hero
+            const hero = document.getElementById('home');
+            if (hero && window.scrollY < hero.offsetHeight) {
+                hero.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+            }
+        }
+
+        function updateNavigation() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href').substring(1);
+                if (href === activeSection) {
+                    link.className = 'nav-link font-medium transition-all duration-300 relative text-blue-600';
+                } else {
+                    link.className = 'nav-link font-medium transition-all duration-300 relative text-slate-700 hover:text-blue-600';
+                }
+            });
+        }
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        // Timeline observer
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        // Confetti animation
+        function createConfetti() {
+            const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'];
+            const confettiContainer = document.createElement('div');
+            confettiContainer.style.position = 'fixed';
+            confettiContainer.style.top = '0';
+            confettiContainer.style.left = '0';
+            confettiContainer.style.width = '100%';
+            confettiContainer.style.height = '100%';
+            confettiContainer.style.pointerEvents = 'none';
+            confettiContainer.style.zIndex = '9999';
+            document.body.appendChild(confettiContainer);
+
+            // Create multiple confetti pieces
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'absolute';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.borderRadius = '50%';
+                confetti.style.animation = `confetti-fall ${2 + Math.random() * 3}s linear forwards`;
+                confettiContainer.appendChild(confetti);
+            }
+
+            // Remove confetti after animation
+            setTimeout(() => {
+                document.body.removeChild(confettiContainer);
+            }, 5000);
+        }
+
+        // Form submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const statusMessage = document.getElementById('status-message');
+            const statusDot = document.getElementById('status-dot');
+            const statusText = document.getElementById('status-text');
+            const statusEmoji = document.getElementById('status-emoji');
+            const celebrationOverlay = document.getElementById('celebration-overlay');
+            const form = document.getElementById('contact-form');
+
+            // Show loading state
+            submitBtn.innerHTML = `
+                <div class="flex items-center justify-center">
+                    <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                    Submitting...
+                </div>
+            `;
+            submitBtn.disabled = true;
+
+            // Get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Validation
+            const required = ['firstName', 'lastName', 'email', 'company', 'industry', 'services'];
+            const missing = required.filter(field => !data[field]);
+
+            if (missing.length > 0) {
+                showStatus(false, 'Please fill in all required fields.');
+                resetSubmitButton();
+                return;
+            }
+
+            // Simulate form submission (since this is a static HTML file)
+            setTimeout(() => {
+                // Show success
+                showStatus(true, 'Your request has been submitted successfully! We will contact you within 24 hours.');
+                
+                // Show celebration
+                celebrationOverlay.classList.remove('hidden');
+                createConfetti();
+
+                // Reset form
+                form.reset();
+
+                // Hide celebration after 3 seconds
+                setTimeout(() => {
+                    celebrationOverlay.classList.add('hidden');
+                }, 3000);
+
+                resetSubmitButton();
+            }, 1000);
+        }
+
+        function showStatus(success, message) {
+            const statusMessage = document.getElementById('status-message');
+            const statusDot = document.getElementById('status-dot');
+            const statusText = document.getElementById('status-text');
+            const statusEmoji = document.getElementById('status-emoji');
+
+            statusMessage.classList.remove('hidden');
+            statusText.textContent = message;
+
+            if (success) {
+                statusMessage.className = 'mb-6 p-4 rounded-xl bg-green-100 text-green-800 border border-green-200 animate-pulse';
+                statusDot.className = 'w-2 h-2 rounded-full mr-3 bg-green-500';
+                statusEmoji.textContent = '✨';
+            } else {
+                statusMessage.className = 'mb-6 p-4 rounded-xl bg-red-100 text-red-800 border border-red-200';
+                statusDot.className = 'w-2 h-2 rounded-full mr-3 bg-red-500';
+                statusEmoji.textContent = '';
+            }
+        }
+
+        function resetSubmitButton() {
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.innerHTML = 'Submit Request';
+            submitBtn.disabled = false;
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observe fade-in elements
+            const fadeElements = document.querySelectorAll('.fade-in-element');
+            fadeElements.forEach(el => observer.observe(el));
+
+            // Observe timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => timelineObserver.observe(item));
+
+            // Add form submit handler
+            document.getElementById('contact-form').addEventListener('submit', handleFormSubmit);
+
+            // Add scroll listener
+            window.addEventListener('scroll', updateActiveSection);
+
+            // Initialize navigation
+            updateNavigation();
+        });
+    </script>
+</body>
+</html>
